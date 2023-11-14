@@ -15,9 +15,16 @@ public class NombresFamiliares {
         System.out.println("Introduce tercer nombre de un familiar/amigo: ");
         String tercerNombre = scanner.nextLine();
 
-        String formatPrimerNombre;
+        String formatPrimerNombre = primerNombre.toUpperCase().charAt(1) + "." + primerNombre.substring(primerNombre.length()-2);
+        System.out.println(formatPrimerNombre);
 
+        String formatSegundoNombre = segundoNombre.toUpperCase().charAt(1) + "." + segundoNombre.substring(segundoNombre.length()-2);
+        System.out.println(formatSegundoNombre);
 
+        String formatTercerNombre = tercerNombre.toUpperCase().charAt(1) + "." + tercerNombre.substring(tercerNombre.length()-2);
+        System.out.println(formatTercerNombre);
 
+        String resultadoFinal = formatPrimerNombre + "_" + formatSegundoNombre + "_" + formatPrimerNombre;
+        System.out.println(resultadoFinal);
     }
 }
