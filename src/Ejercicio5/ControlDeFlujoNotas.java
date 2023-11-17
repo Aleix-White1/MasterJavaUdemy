@@ -2,7 +2,6 @@ package Ejercicio5;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 /*
 * Pedir 20 notas finales de alumnos en una escala de 1 a 7, manejar decimales en las notas (double).
 * Mostrar el promedio de las notas mayores a 5, promedio de notas inferiores a 4 y la cantidad de notas 1,
@@ -17,21 +16,20 @@ public class ControlDeFlujoNotas {
         Scanner scanner = new Scanner(System.in);
 
         double notas;
-        double notasIgual1[] = new double[1];
-        double notasMayor5[] = new double[1];
-        double notasMenor4[] = new double[1];
+        double[] notasIgual1= new double[10];
+        double[] notasMayor5 = new double[10];
+        double[] notasMenor4 = new double[10];
 
-        for (int i = 1; i < 10; i++){
+        for (int i = 0; i < 10; i++){
             System.out.printf("Ingresa la nota %d:", i);
             try {
                 notas = scanner.nextDouble();
                 if (notas <= 7 & notas >= 1){
-                    System.out.println(notas);
                     if (notas == 1){
                         notasIgual1[i] = notas;
-                    }else if (notas > 5){
+                    }else if (notas >= 5){
                         notasMayor5[i] = notas;
-                    }else if (notas < 4){
+                    }else if (notas <= 4){
                         notasMenor4[i] = notas;
                     }
                 }else{
@@ -44,6 +42,18 @@ public class ControlDeFlujoNotas {
                 scanner.nextLine();
                 i--;
             }
+        }
+        System.out.println("Notas igual a 1");
+        for(double num : notasIgual1){
+            System.out.println(num);
+        }
+        System.out.println("Notas mayor a 5");
+        for(double num : notasMayor5){
+            System.out.println(num);
+        }
+        System.out.println("Notas menor a 4");
+        for(double num : notasMenor4){
+            System.out.println(num);
         }
 
     }
